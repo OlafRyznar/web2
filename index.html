@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Czy zostaniesz moją Walentynką?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #ff6ec4, #7873f5);
+      color: #fff;
+      overflow: hidden; /* Ukrycie zawijania treści, gdy ekran jest mały */
+    }
+    .question {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: pulse 2s infinite alternate; /* Animacja pulsowania dla nagłówka */
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin: 0 10px;
+      position: absolute; /* Ustawienie przycisku na pozycji absolutnej */
+    }
+    #yesButton {
+      background-color: rgba(0, 255, 0, 0.7); /* Zielony kolor dla przycisku "TAK" */
+      color: #000;
+      animation: pulse 2s infinite alternate; /* Animacja pulsowania dla przycisku "TAK" */
+    }
+    #noButton {
+      background-color: rgba(255, 0, 0, 0.7); /* Czerwony kolor dla przycisku "NIE" */
+      color: #fff;
+      animation: circleMove 5s infinite linear; /* Animacja przesuwania w kółko dla przycisku "NIE" */
+    }
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.05);
+      }
+    }
+    @keyframes circleMove {
+      0% {
+        transform: translateX(0) translateY(-50%);
+      }
+      25% {
+        transform: translateX(calc(50vw - 50%)) translateY(0);
+      }
+      50% {
+        transform: translateX(0) translateY(calc(50vh - 50%));
+      }
+      75% {
+        transform: translateX(calc(-50vw + 50%)) translateY(0);
+      }
+      100% {
+        transform: translateX(0) translateY(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="question">
+  <h2>Czy zostaniesz moją Walentynką?</h2>
+</div>
+
+<div class="button-container">
+  <button id="yesButton">TAK</button>
+  <button id="noButton">NIE</button>
+</div>
+
+<!-- Element <img>, w którym będzie wyświetlany obrazek "cat.png" -->
+<img id="catImage" style="display: none; margin-top: 20px;" src="cat.png" alt="Cat" />
+
+<script src="script.js"></script>
+
+</body>
+</html>
